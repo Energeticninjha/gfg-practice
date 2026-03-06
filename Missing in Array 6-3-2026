@@ -1,0 +1,21 @@
+class Solution {
+    int missingNum(int arr[]) {
+        int n = arr.length + 1;
+       
+        boolean[] seen = new boolean[n + 1];
+
+        
+        for (int num : arr) {
+            seen[num] = true;
+        }
+
+       
+        for (int i = 1; i <= n; i++) {
+            if (!seen[i]) {
+                return i;
+            }
+        }
+        
+        return -1; 
+    }
+}
